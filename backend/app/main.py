@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
@@ -70,3 +71,5 @@ def get_task(task_id: int, db: Session = Depends(get_db)):
     if not task:
         raise HTTPException(status_code=404, detail="Task not found")
     return task
+
+PORT = int(os.environ.get("PORT", 8000))
