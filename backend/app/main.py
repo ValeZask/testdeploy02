@@ -115,8 +115,8 @@ def create_checkout_session(request: CheckoutRequest, db: Session = Depends(get_
                 'quantity': 1,
             }],
             mode='payment',
-            success_url='http://localhost:3000/success',
-            cancel_url='http://localhost:3000/cancel',
+            success_url='https://testdeploy02-de3ql11ng-vales-projects-5ce4184c.vercel.app/success',
+            cancel_url='https://testdeploy02-de3ql11ng-vales-projects-5ce4184c.vercel.app/cancel',
             customer_email=request.customer_email,
         )
 
